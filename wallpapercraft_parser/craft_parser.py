@@ -62,6 +62,7 @@ class WallpaperCraftParser:
         return await asyncio.gather(*tasks)
 
     async def collect_data(self, urls):
+        '''Create client session'''
         async with ClientSession(headers=self.__headers) as session:
             return await self.__collect_tasks(urls, session)
 
